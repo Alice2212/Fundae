@@ -200,8 +200,11 @@ for(let i = 1; i < contributorListLength + 1; i++){
     amount:Math.floor(getContributorList.amount / 1000000000000000000)
   })
 }
+ 
+$("#getContributors").hide()
+$("#getProject").hide()
 renderProjectList();  
-renderContributorList()
+renderContributorList();
 $("#loader").hide();
 })
 
