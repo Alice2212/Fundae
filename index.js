@@ -1,5 +1,6 @@
 const contractSource = `
 payable contract Project=
+ // project record
   record project ={
     id:int,
     creator:address,
@@ -13,7 +14,7 @@ payable contract Project=
       id:int,
       contributors : address,
       amount:int}
-
+  // state
   record state ={
     index_counter:int,
     index_contribution_counter:int,
@@ -29,9 +30,11 @@ payable contract Project=
     contributions={}}
 
   entrypoint getProjectLength():int=
+    // gets the number of total projects
     state.index_counter
 
   entrypoint getContributionLength():int=
+        // gets the number of total contributors
     state.index_contribution_counter
 
   stateful entrypoint add_project(
@@ -64,6 +67,18 @@ payable contract Project=
       Some(x) => x  
       
   payable stateful entrypoint contribute(_id:int)=
+    /*
+      gets the project
+      gets the project creator
+      checks that the current block timestamp is less than the projects deadline
+      checks projects id is greater than 0
+      checjs that the amount the user is donating is more than 0
+      get the contribution length
+      add the Call.value to the project total
+      store the contributor
+      store the updated project
+      updates the state
+    */
     let project = get_project_by_index(_id) 
     let project_owner  = project.creator : address
     require(Chain.timestamp < project.deadline, "Project Has Expired")
@@ -87,6 +102,7 @@ payable contract Project=
     put(state{projects[_id]=updated_project,contributions[index]=stored_contribution, index_contribution_counter=index,currentBalance = total_balance})
     
   payable stateful entrypoint payout(_id:int) = 
+    // cash out for the project creator to cash out
     let project = get_project_by_index(_id)
     let total_balance = getCurrentBalance()
     require(project.total >= project.amountGoal,"Goal Not Met")
