@@ -8,7 +8,7 @@
   border-right-color: transparent;
 	animation:rotate 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
 }
-#loader2{
+.loader2{
 	border:3px solid #3bc9db;
 	width:220px;
 	height:220px;
@@ -18,7 +18,7 @@
   border-right-color: transparent;
 	animation:rotate2 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
 }
-#loader3{
+.loader3{
 	border:3px solid #d6336c;
 	width:240px;
 	height:240px;
@@ -28,7 +28,7 @@
   border-right-color: transparent;
 	animation:rotate 2s cubic-bezier(0.26, 1.36, 0.74,-0.29) infinite;
 }
-#loader4{
+.loader4{
 	border:3px solid #3bc9db;
 	width:260px;
 	height:260px;
