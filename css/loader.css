@@ -1,27 +1,40 @@
-@import "compass/css3";
+.gooey
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 142px
+  height: 40px
+  margin: -20px 0 0 -71px
+  background: white
+  .dot
+    position: absolute
+    width: 16px
+    height: 16px
+    top: 12px
+    left: 15px
+    filter: blur(4px)
+    background: #86c042
+    border-radius: 50%
+    transform: translateX(0)
+    animation: dot 2.8s infinite
+  .dots
+    transform: translateX(0)
+    margin-top: 12px
+    margin-left: 31px
+    animation: dots 2.8s infinite
+    span
+      display: block
+      float: left
+      width: 16px
+      height: 16px
+      margin-left: 16px
+      filter: blur(4px)
+      background: #86c042
+      border-radius: 50%
 
- 
- #loader {
- height: 12em;
- margin: -6em 0px 0px -6em;
- padding: 10px;
- position: fixed;
- top: 50%;
- left: 50%;
- width: 12em;
- z-index: 9999;
- }
- 
- #loader svg {
- height: 12em;
- width: 12em;
- }
- 
- #loader svg path {
- stroke-width: 0px;
- }
- 
- #loader svg path {
- fill: #44cbf8;
- stroke: none;
- }
+@keyframes dot
+  50%
+    transform: translateX(96px)
+@keyframes dots
+  50%
+    transform: translateX(-31px)
