@@ -226,12 +226,17 @@ $("#addButton").click(async function(){
   // console.log(new Date(new_deadline))
   const new_project = await contractCall('add_project', [title, description, new_deadline,parseInt(goal*1000000000000000000,10)],0);
 console.log("##########START########")
-console.log("New Project:", new_project)
-console.log("New Project Title:",new_project.title)
-console.log("New Project Description:",new_project.description)
-console.log("New Project Deadline:",new_project.deadline)
-console.log("New Project Goal:",new_project.amountGoal)
+
+console.log("Added successfully")
+// console.log("New Project:", new_project)
+// console.log("New Project Title:", new_project.title)
+// console.log("New Project Description:", new_project.description)
+// console.log("New Project Deadline:", new_project.deadline)
+// console.log("New Project Goal:", new_project.amountGoal)
 console.log("#########END###########")
+
+location.reload(true)
+
 
   // // clear
   $("#title").val("");
@@ -257,7 +262,7 @@ $("#getProject").on("click",".fundProj", async function(event){
   console.log("Data Index:", dataIndex)
   console.log("--------------------------")
   
-  console.log("Just Clicked The Buy Button")
+  console.log("Just Clicked The Donate Button")
   event.preventDefault();
   $("#loader").hide();
   // window.location.reload(true);
