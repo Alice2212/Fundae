@@ -161,7 +161,7 @@ function renderContributorList(){
 
 
 window.addEventListener('load', async() => {
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   client = await Ae.Aepp();
   user_address = await client.address()
@@ -205,7 +205,7 @@ $("#getContributors").hide()
 $("#getProject").hide()
 renderProjectList();  
 renderContributorList();
-$("#loader").hide();
+$("#loading-bar-spinner").hide();
 })
 
 
@@ -213,7 +213,7 @@ $("#loader").hide();
 //click the Create Button
 $("#addButton").click(async function(){
   console.log("Button Clicked....");
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   var title = ($("#title").val());
   var description = ($("#description").val());
@@ -243,13 +243,13 @@ location.reload(true)
   $("#description").val("");
   $("#deadline").val("");
   $("#goal").val("");
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
 
 })
  
 // Fund Project
 $("#getProject").on("click",".fundProj", async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   console.log("Fund Project Clicked")
   const dataIndex = event.target.id
@@ -264,7 +264,7 @@ $("#getProject").on("click",".fundProj", async function(event){
   
   console.log("Just Clicked The Donate Button")
   event.preventDefault();
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
   // window.location.reload(true);
 });
 
@@ -278,7 +278,7 @@ $("#getProject").on("click",".fundProj", async function(event){
 */
 
 $("#getProject").on("click",".payout", async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   console.log("Payout Button Clicked Clicked")
   const dataIndex = event.target.id
@@ -295,7 +295,7 @@ $("#getProject").on("click",".payout", async function(event){
   
   console.log("Just Clicked The Buy Button")
   event.preventDefault();
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
   // window.location.reload(true);
 });
 
