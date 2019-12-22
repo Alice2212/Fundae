@@ -161,7 +161,7 @@ function renderContributorList(){
 
 
 window.addEventListener('load', async() => {
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   client = await Ae.Aepp();
   user_address = await client.address()
@@ -205,7 +205,7 @@ $("#getContributors").hide()
 $("#getProject").hide()
 renderProjectList();  
 renderContributorList();
-$("#loader").hide();
+$("#loading-bar-spinner").hide();
 })
 
 
@@ -213,7 +213,7 @@ $("#loader").hide();
 //click the Create Button
 $("#addButton").click(async function(){
   console.log("Button Clicked....");
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   var title = ($("#title").val());
   var description = ($("#description").val());
@@ -226,25 +226,30 @@ $("#addButton").click(async function(){
   // console.log(new Date(new_deadline))
   const new_project = await contractCall('add_project', [title, description, new_deadline,parseInt(goal*1000000000000000000,10)],0);
 console.log("##########START########")
-console.log("New Project:", new_project)
-console.log("New Project Title:",new_project.title)
-console.log("New Project Description:",new_project.description)
-console.log("New Project Deadline:",new_project.deadline)
-console.log("New Project Goal:",new_project.amountGoal)
+
+console.log("Added successfully")
+// console.log("New Project:", new_project)
+// console.log("New Project Title:", new_project.title)
+// console.log("New Project Description:", new_project.description)
+// console.log("New Project Deadline:", new_project.deadline)
+// console.log("New Project Goal:", new_project.amountGoal)
 console.log("#########END###########")
+
+location.reload(true)
+
 
   // // clear
   $("#title").val("");
   $("#description").val("");
   $("#deadline").val("");
   $("#goal").val("");
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
 
 })
  
 // Fund Project
 $("#getProject").on("click",".fundProj", async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   console.log("Fund Project Clicked")
   const dataIndex = event.target.id
@@ -257,9 +262,9 @@ $("#getProject").on("click",".fundProj", async function(event){
   console.log("Data Index:", dataIndex)
   console.log("--------------------------")
   
-  console.log("Just Clicked The Buy Button")
+  console.log("Just Clicked The Donate Button")
   event.preventDefault();
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
   // window.location.reload(true);
 });
 
@@ -273,7 +278,7 @@ $("#getProject").on("click",".fundProj", async function(event){
 */
 
 $("#getProject").on("click",".payout", async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   console.log("Payout Button Clicked Clicked")
   const dataIndex = event.target.id
@@ -290,7 +295,7 @@ $("#getProject").on("click",".payout", async function(event){
   
   console.log("Just Clicked The Buy Button")
   event.preventDefault();
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
   // window.location.reload(true);
 });
 

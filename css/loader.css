@@ -1,27 +1,23 @@
-@import "compass/css3";
+#loading-bar-spinner.spinner {
+    left: 50%;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 19 !important;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
 
- 
- #loader {
- height: 12em;
- margin: -6em 0px 0px -6em;
- padding: 10px;
- position: fixed;
- top: 50%;
- left: 50%;
- width: 12em;
- z-index: 9999;
- }
- 
- #loader svg {
- height: 12em;
- width: 12em;
- }
- 
- #loader svg path {
- stroke-width: 0px;
- }
- 
- #loader svg path {
- fill: #44cbf8;
- stroke: none;
- }
+#loading-bar-spinner.spinner .spinner-icon {
+    width: 40px;
+    height: 40px;
+    border:  solid 4px transparent;
+    border-top-color:  #00C8B1 !important;
+    border-left-color: #00C8B1 !important;
+    border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}

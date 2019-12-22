@@ -10,6 +10,8 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/scrollbar.css" rel="stylesheet">
+  <link href="css/loader.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async>
   </script>
   
@@ -17,6 +19,9 @@
 
 </head>
 <body>
+  <div id="scrollbar">
+
+
   <!-- NavBar -->
   <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
@@ -61,9 +66,14 @@
   <div class="row">
     <div class="col-md-12">
         <!-- Crete FOrm -->
-        <div id="loader" class=" mt-4 text-center text-bold mb-4">####### LOADING #######</div>
+
+        <!-- Loader -->
+       
+            
+        <!--  -->
         <div class="text-center border border-light p-5" id="add_project_form">
           <p class="h4 mb-4">Create Project</p>
+          <div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
           <p>Start Project And Get Others To Fund It </p>
           
           <!-- Name -->
@@ -101,7 +111,7 @@
           </div>
         </div>
       </div>
-
+    </div>
     <!-- end list project section -->
     
   <!-- End main section -->
